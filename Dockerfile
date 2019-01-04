@@ -26,7 +26,8 @@ RUN apk add --no-cache \
     nodejs-npm \
     openssh-client \
     postgresql-libs \
-    rsync
+    rsync \
+    unzip
 
 # Install PECL and PEAR extensions
 RUN pecl install \
