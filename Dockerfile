@@ -6,9 +6,7 @@ RUN apk add --no-cache --virtual .build-deps \
     curl-dev \
     imagemagick-dev \
     libtool \
-    libxml2-dev \
-    postgresql-dev \
-    sqlite-dev
+    libxml2-dev
 
 # Install production dependencies
 RUN apk add --no-cache \
@@ -25,7 +23,6 @@ RUN apk add --no-cache \
     nodejs \
     nodejs-npm \
     openssh-client \
-    postgresql-libs \
     rsync \
     unzip
 
@@ -57,6 +54,11 @@ RUN docker-php-ext-install \
 RUN curl -s https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/ --filename=composer
 ENV COMPOSER_ALLOW_SUPERUSER=1
 ENV PATH="./vendor/bin:$PATH"
+
+# Install deployer
+RUN curl -LsO https://deployer.org/deployer.phar \
+    && mv deployer.phar /usr/local/bin/dep \
+    && chmod +x /usr/local/bin/dep
 
 # Cleanup dev dependencies
 RUN apk del -f .build-deps
