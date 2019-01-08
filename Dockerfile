@@ -26,7 +26,7 @@ RUN apk add --no-cache \
     rsync \
     unzip
 
-# Install PECL and PEAR extensions
+# Install PECL and PEAR extensions test
 RUN pecl install \
     imagick \
     xdebug
