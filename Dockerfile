@@ -25,7 +25,7 @@ RUN apk add --no-cache \
     openssh-client \
     rsync \
     unzip \
-    libzip
+    php-pecl-zip
 
 # Install PECL and PEAR extensions test
 #RUN pecl install \
