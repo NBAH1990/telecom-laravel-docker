@@ -24,7 +24,8 @@ RUN apk add --no-cache \
     nodejs-npm \
     openssh-client \
     rsync \
-    unzip
+    unzip \
+    libzip
 
 # Install PECL and PEAR extensions test
 #RUN pecl install \
