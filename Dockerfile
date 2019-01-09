@@ -45,6 +45,7 @@ RUN docker-php-ext-enable \
     imagick \
     zip \
     mongodb \
+    soap \
     sodium
 
 RUN docker-php-ext-install \
