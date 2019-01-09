@@ -6,7 +6,8 @@ RUN apk add --no-cache --virtual .build-deps \
     curl-dev \
     imagemagick-dev \
     libtool \
-    libxml2-dev
+    libxml2-dev \
+    libzip
 
 # Install production dependencies
 RUN apk add --no-cache \
