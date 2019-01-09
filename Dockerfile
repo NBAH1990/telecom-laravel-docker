@@ -52,8 +52,7 @@ RUN docker-php-ext-install \
     xml \
     gd \
     zip \
-    bcmath \
-    oci8
+    bcmath
 
 # Install composer
 RUN curl -s https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/ --filename=composer
