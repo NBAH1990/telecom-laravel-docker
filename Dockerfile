@@ -33,13 +33,19 @@ RUN apk add --no-cache \
 # Install PECL and PEAR extensions test
 RUN pecl install \
     imagick \
-    zip
+    zip \
+    mongodb \
+    soap \
+    sodium
 
 #RUN pear install PHP_CodeSniffer
 # Install and enable php extensions
 RUN docker-php-ext-enable \
     imagick \
-    zip
+    zip \
+    mongodb \
+    soap \
+    sodium
 
 RUN docker-php-ext-install \
     curl \
@@ -52,10 +58,7 @@ RUN docker-php-ext-install \
     xml \
     gd \
     zip \
-    bcmath \
-    sodium \
-    mongodb \
-    soap
+    bcmath
 
 # Install composer
 RUN curl -s https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/ --filename=composer
