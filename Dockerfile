@@ -8,7 +8,8 @@ RUN apk add --no-cache --virtual .build-deps \
     libtool \
     libxml2-dev \
     libzip \
-    libzip-dev
+    libzip-dev \
+    php-soap
 
 # Install production dependencies
 RUN apk add --no-cache \
@@ -28,14 +29,14 @@ RUN apk add --no-cache \
     rsync \
     unzip \
     libzip \
-    libzip-dev
+    libzip-dev \
+    php-soap
 
 # Install PECL and PEAR extensions test
 RUN pecl install \
     imagick \
     zip \
     mongodb \
-    soap \
     sodium
 
 #RUN pear install PHP_CodeSniffer
@@ -44,7 +45,6 @@ RUN docker-php-ext-enable \
     imagick \
     zip \
     mongodb \
-    soap \
     sodium
 
 RUN docker-php-ext-install \
