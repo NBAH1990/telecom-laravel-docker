@@ -7,7 +7,8 @@ RUN apk add --no-cache --virtual .build-deps \
     imagemagick-dev \
     libtool \
     libxml2-dev \
-    libzip
+    libzip \
+    libzip-dev
 
 # Install production dependencies
 RUN apk add --no-cache \
@@ -26,15 +27,16 @@ RUN apk add --no-cache \
     openssh-client \
     rsync \
     unzip \
-    libzip
+    libzip \
+    libzip-dev
 
 # Install PECL and PEAR extensions test
 RUN pecl install \
     imagick \
     xdebug \
     zip
-#RUN pear install PHP_CodeSniffer
 
+#RUN pear install PHP_CodeSniffer
 # Install and enable php extensions
 RUN docker-php-ext-enable \
     imagick \
