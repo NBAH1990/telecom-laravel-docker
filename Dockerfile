@@ -59,7 +59,6 @@ RUN docker-php-ext-install \
     gd \
     zip \
     bcmath \
-    mongodb \
     soap \
     sodium
 
