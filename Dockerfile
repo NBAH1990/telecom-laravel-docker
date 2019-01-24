@@ -68,6 +68,9 @@ RUN curl -s https://getcomposer.org/installer | php -- --install-dir=/usr/local/
 ENV COMPOSER_ALLOW_SUPERUSER=1
 ENV PATH="./vendor/bin:$PATH"
 
+# Install composer parallel
+RUN composer global require hirak/prestissimo
+
 # Install deployer
 RUN curl -LsO https://deployer.org/deployer.phar \
     && mv deployer.phar /usr/local/bin/dep \
